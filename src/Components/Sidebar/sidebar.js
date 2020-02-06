@@ -1,4 +1,5 @@
 import React from 'react';
+import './index.css';
 
 class Sidebar extends React.Component {
  
@@ -10,9 +11,6 @@ class Sidebar extends React.Component {
           activeSpeciesFilter : {},
           sortOrder : 0
       }
-
-      
-
     }
 
     handleFilterClick(type,e) {
@@ -49,7 +47,7 @@ class Sidebar extends React.Component {
 
     render() {
         return (
-            <div >
+            <div className='sorting-section'>
                 <h2 className="padding-10">
                     Filters
                 </h2>
@@ -59,15 +57,15 @@ class Sidebar extends React.Component {
                     </h3>
                     <p>
                         <label htmlFor="human">Human</label>
-                        <input onChange = {this.handleFilterClick.bind(this,'Species')} type="checkbox" name="human" id="human" ></input>
+                        <input className="checkbox-style" onChange = {this.handleFilterClick.bind(this,'Species')} type="checkbox" name="human" id="human" ></input>
                     </p>
                     <p>
                         <label htmlFor="mythology">Mythology</label>
-                        <input onChange = {this.handleFilterClick.bind(this,'Species')} type="checkbox" name="mythology" id="mythology" ></input>
+                        <input className="checkbox-style" onChange = {this.handleFilterClick.bind(this,'Species')} type="checkbox" name="mythology" id="mythology" ></input>
                     </p>
                     <p>
                         <label htmlFor="other">Other</label>
-                        <input onChange = {this.handleFilterClick.bind(this,'Species')} type="checkbox" name="other" id="other" ></input>
+                        <input className="checkbox-style" onChange = {this.handleFilterClick.bind(this,'Species')} type="checkbox" name="other" id="other" ></input>
                     </p>
                 </div>
 
@@ -77,11 +75,11 @@ class Sidebar extends React.Component {
                     </h3>
                     <p>
                         <label htmlFor="male">Male</label>
-                        <input onChange = {this.handleFilterClick.bind(this,'Gender')} type="checkbox" name="male" id="male" ></input>
+                        <input className="checkbox-style" onChange = {this.handleFilterClick.bind(this,'Gender')} type="checkbox" name="male" id="male" ></input>
                     </p>
                     <p>
                         <label htmlFor="female">Female</label>
-                        <input onChange = {this.handleFilterClick.bind(this,'Gender')} type="checkbox" name="female" id="female" ></input>
+                        <input className="checkbox-style" onChange = {this.handleFilterClick.bind(this,'Gender')} type="checkbox" name="female" id="female" ></input>
                     </p>
                    
                 </div>
@@ -91,7 +89,7 @@ class Sidebar extends React.Component {
                     </h3>
                    
                     <p>
-                        <select aria-label='Sort'  name = "sort" onChange={this.handleFilterClick.bind(this,'Sort')}>
+                        <select aria-label='Sort' className='sort-style' name = "sort" onChange={this.handleFilterClick.bind(this,'Sort')}>
                             <option selected = {true} value='0'>None</option>
                             <option  value='-1'>Descending</option>
                             <option  value='1'>Ascending </option>
